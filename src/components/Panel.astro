@@ -1,0 +1,12 @@
+---
+interface Props {
+  width?: string;
+}
+
+const { width } = Astro.props;
+const style = width ? `max-width: ${width}; width: 100%` : undefined;
+---
+
+<div class="panel" style={style}>
+  <slot />
+</div>

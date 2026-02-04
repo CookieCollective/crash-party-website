@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Panel from "../../components/Panel.astro";
+import VideoEmbed from "../../components/VideoEmbed.astro";
+import { t, type Locale } from "../../i18n";
+
+export function getStaticPaths() {
+  return [{ params: { locale: "fr" } }, { params: { locale: "en" } }];
+}
+
+const locale = Astro.params.locale as Locale;
+const tr = t(locale);
+---
+
+<BaseLayout title={tr.title} locale={locale}>
+  <div class="fixed_background">
+    <img class="background" src="/content/photo/table.jpg" />
+  </div>
+
+  <div class="board column">
+    <div class="row words">
+      <Panel><h1>{tr.makingOf}</h1></Panel>
+      <Panel><h1>{tr.title}</h1></Panel>
+    </div>
+    <div class="space"></div>
+    <Panel>
+      <p set:html={tr.intro} />
+    </Panel>
+    <div class="space"></div>
+    <div class="space"></div>
+    <VideoEmbed src="/content/video/turn_table.mp4" caption={tr.turnTable} />
+    <div class="space"></div>
+    <div class="space"></div>
+    <Panel>
+      <p>{tr.makingOfLorem}</p>
+    </Panel>
+    <div class="space"></div>
+    <div class="space"></div>
+    <VideoEmbed src="/content/video/nunchuk.mp4" caption={tr.nunchuk} />
+  </div>
+</BaseLayout>
