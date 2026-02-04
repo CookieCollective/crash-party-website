@@ -1,0 +1,19 @@
+---
+interface Props {
+  src: string;
+  caption: string;
+}
+
+const { src, caption } = Astro.props;
+---
+
+<div class="column">
+  <div class="row self_center">
+    <div class="not_too_tall">
+      <video class="shadow" src={src} muted loop autoplay playsinline></video>
+    </div>
+  </div>
+  <div class="panel self_center">
+    {caption}
+  </div>
+</div>

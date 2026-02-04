@@ -1,0 +1,18 @@
+---
+interface Props {
+  id: string;
+  videoSrc: string;
+  position?: "center" | "bottom";
+}
+
+const { id, videoSrc, position = "bottom" } = Astro.props;
+const guiClass = position === "center" ? "gui_center" : "gui_bottom_center";
+---
+
+<div id={id} class="slide">
+  <video class="background" src={videoSrc} muted loop autoplay playsinline
+  ></video>
+  <div class={guiClass}>
+    <slot />
+  </div>
+</div>

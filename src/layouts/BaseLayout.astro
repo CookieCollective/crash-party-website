@@ -1,0 +1,39 @@
+---
+import type { Locale } from "../i18n";
+
+interface Props {
+  title: string;
+  locale: Locale;
+}
+
+const { title, locale } = Astro.props;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta property="og:title" content="Crash Party" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/content/image/icon.png" />
+    <meta property="og:description" content="Crash Party" />
+    <meta property="og:url" content="" />
+    <link
+      href="/content/image/smile.png"
+      rel="shortcut icon"
+      type="image/png"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="column">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/global.css";
+</style>
