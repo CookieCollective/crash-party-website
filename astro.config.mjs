@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
 
 export default defineConfig({
-  base: "/w/crash-party/",
+  base: process.env.BASE_PATH || "/w/crash-party/",
   integrations: [svelte()],
   i18n: {
     defaultLocale: "fr",
