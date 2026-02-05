@@ -10,11 +10,12 @@ export function getStaticPaths() {
 
 const locale = Astro.params.locale as Locale;
 const tr = t(locale);
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title={tr.title} locale={locale}>
   <div class="fixed_background">
-    <img class="background" src="/content/photo/table.jpg" />
+    <img class="background" src={`${base}content/photo/table.jpg`} />
   </div>
 
   <div class="board column">
@@ -28,7 +29,7 @@ const tr = t(locale);
     </Panel>
     <div class="space"></div>
     <div class="space"></div>
-    <VideoEmbed src="/content/video/turn_table.mp4" caption={tr.turnTable} />
+    <VideoEmbed src={`${base}content/video/turn_table.mp4`} caption={tr.turnTable} />
     <div class="space"></div>
     <div class="space"></div>
     <Panel>
@@ -36,6 +37,6 @@ const tr = t(locale);
     </Panel>
     <div class="space"></div>
     <div class="space"></div>
-    <VideoEmbed src="/content/video/nunchuk.mp4" caption={tr.nunchuk} />
+    <VideoEmbed src={`${base}content/video/nunchuk.mp4`} caption={tr.nunchuk} />
   </div>
 </BaseLayout>

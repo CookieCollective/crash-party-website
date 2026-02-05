@@ -11,10 +11,11 @@ export function getStaticPaths() {
 
 const locale = Astro.params.locale as Locale;
 const tr = t(locale);
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title={tr.title} locale={locale}>
-  <Slide id="intro" videoSrc="/content/video/party_loop.mp4" position="bottom">
+  <Slide id="intro" videoSrc={`${base}content/video/party_loop.mp4`} position="bottom">
     <div class="column flex_center">
       <Panel width="600px">
         <p set:html={tr.intro} />
@@ -24,13 +25,13 @@ const tr = t(locale);
       <div class="space"></div>
       <div class="scroll_cursor">
         <a href="#showreel" class="linkless">
-          <img class="moving_cursor" src="/content/image/little_cursor.png" />
+          <img class="moving_cursor" src={`${base}content/image/little_cursor.png`} />
         </a>
       </div>
     </div>
   </Slide>
 
-  <Slide id="showreel" videoSrc="/content/video/showreel.mp4" position="center">
+  <Slide id="showreel" videoSrc={`${base}content/video/showreel.mp4`} position="center">
     <div class="column flex_center">
       <div class="panel self_center">
         <TextRotator
@@ -43,7 +44,7 @@ const tr = t(locale);
     </div>
   </Slide>
 
-  <Slide id="party" videoSrc="/content/video/party.mp4" position="center">
+  <Slide id="party" videoSrc={`${base}content/video/party.mp4`} position="center">
     <div class="column">
       <div class="row words">
         <div class="panel"><h1>{tr.partyTitle}</h1></div>
@@ -54,7 +55,7 @@ const tr = t(locale);
         <p set:html={tr.partyText} />
       </Panel>
       <Panel width="600px">
-        <audio controls src="/content/audio/audio.mp3" style="width: 100%;"
+        <audio controls src={`${base}content/audio/audio.mp3`} style="width: 100%;"
         ></audio>
       </Panel>
       <div class="space"></div>
@@ -82,7 +83,7 @@ const tr = t(locale);
     </div>
   </Slide>
 
-  <Slide id="games" videoSrc="/content/video/games.mp4" position="center">
+  <Slide id="games" videoSrc={`${base}content/video/games.mp4`} position="center">
     <div class="column">
       <div class="row words">
         <div class="panel"><h1>{tr.gamesTitle}</h1></div>
@@ -114,7 +115,7 @@ const tr = t(locale);
     </div>
   </Slide>
 
-  <Slide id="shader" videoSrc="/content/video/shader.mp4" position="center">
+  <Slide id="shader" videoSrc={`${base}content/video/shader.mp4`} position="center">
     <div class="column">
       <div class="row words">
         <div class="panel"><h1>{tr.shaderTitle}</h1></div>
@@ -143,7 +144,7 @@ const tr = t(locale);
 
   <Slide
     id="immersive"
-    videoSrc="/content/video/immersive.mp4"
+    videoSrc={`${base}content/video/immersive.mp4`}
     position="center"
   >
     <div class="column">
@@ -171,7 +172,7 @@ const tr = t(locale);
     </div>
   </Slide>
 
-  <Slide id="made_with" videoSrc="/content/video/godot.mp4" position="center">
+  <Slide id="made_with" videoSrc={`${base}content/video/godot.mp4`} position="center">
     <div class="column">
       <div class="row words">
         <div class="panel"><h1>{tr.madeWithTitle}</h1></div>
@@ -214,7 +215,7 @@ const tr = t(locale);
     </div>
   </Slide>
 
-  <Slide id="thanks" videoSrc="/content/video/thanks.mp4" position="bottom">
+  <Slide id="thanks" videoSrc={`${base}content/video/thanks.mp4`} position="bottom">
     <div class="column">
       <div class="panel self_center"><h1>{tr.thanks}</h1></div>
       <div class="space"></div>
