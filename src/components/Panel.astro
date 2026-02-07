@@ -4,7 +4,7 @@ interface Props {
 }
 
 const { width } = Astro.props;
-const style = width ? `max-width: ${width}; width: 100%` : undefined;
+const style = width ? `max-width: ${width};` : undefined;
 ---
 
 <div class="panel" style={style}>

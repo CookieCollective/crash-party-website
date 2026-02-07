@@ -12,7 +12,5 @@ const guiClass = position === "center" ? "gui_center" : "gui_bottom_center";
 <div id={id} class="slide">
   <video class="background" src={videoSrc} muted loop autoplay playsinline
   ></video>
-  <div class={guiClass}>
-    <slot />
-  </div>
+  <slot />
 </div>
