@@ -241,6 +241,9 @@ a:hover .panel {
 .self_center {
   align-self: center;
 }
+.align_center {
+  align-items: center;
+}
 .scroll_cursor {
   cursor: pointer;
   align-self: center;
