@@ -153,7 +153,6 @@ a:hover .panel {
   }
   .gui_bottom_center {
     width: calc(100% - 20px);
-    text-align: center;
   }
   .scroll_cursor {
     display: none;
@@ -162,20 +161,23 @@ a:hover .panel {
     padding: 5px;
   }
   h1 {
-    font-size: 26px;
-    padding: 5px 5px 0 5px;
-  }
-  h2 {
     font-size: 24px;
     padding: 5px 5px 0 5px;
   }
+  h2 {
+    font-size: 22px;
+    padding: 5px 5px 0 5px;
+  }
   p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 22px;
     padding: 5px 5px 0 5px;
   }
   body {
-    font-size: 24px;
+    font-size: 22px;
+  }
+  .lot_of_words .row {
+    flex-direction: column;
   }
 }
 .shadow {
